@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - ${PROJECT_PORT}:80
+    volumes:
+      - ./public:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    container_name: patterns_nginx
+  php:
+    build: ./docker/php
+    volumes:
+      - ./public:/var/www/html
+    container_name: patterns_php
