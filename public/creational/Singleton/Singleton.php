@@ -1,6 +1,6 @@
 <?php
 
-
+namespace App\Creational\Singleton;
 
 class Singleton
 {
